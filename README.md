@@ -18,8 +18,8 @@ For more information open the help dialog in the application.
 
 * Clone the repository
 * Import the project as an Android application
-* Due to backwards compatibility to API level 7 you need to include the support library with resources
-* Just follow this guide, section "Adding libraries with resources" :   http://developer.android.com/tools/support-library/setup.html#add-library
+* Due to backwards compatibility to API level 7 you need to include the support library with resources ("appcompat" is needed)
+* Just follow this guide, section "Adding libraries with resources": http://developer.android.com/tools/support-library/setup.html#add-library
 * You're ready to compile and test the application
 
 ## Permissions explained

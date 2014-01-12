@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="navdrawer_width">250dp</dimen>
+    <dimen name="navdrawer_standard_padding">16dp</dimen>
+
+</resources>

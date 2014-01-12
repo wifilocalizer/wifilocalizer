@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <!-- General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_use_geometric_mean_title">Use geometric mean</string>
+    <string name="pref_use_geometric_mean_summary">Use geometric mean for smoother movement in localization mode</string>
+    <string name="pref_bssid_filter_title">SSID filter</string>
+    <string name="pref_bssid_filter_summary">Filter by a certain AP name, e.g. CISCO_AIR</string>
+
+    <!-- Extended settings -->
+    <string name="pref_header_extended">Extended Settings</string>
+    <string name="pref_extended_wifi_fetching_interval">WiFi fetching interval</string>
+
+    <string-array name="pref_extended_wifi_fetching_interval_titles">
+        <item>1000 ms</item>
+        <item>1500 ms</item>
+        <item>2000 ms</item>
+    </string-array>
+    <string-array name="pref_extended_wifi_fetching_interval_values">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+    </string-array>
+
+    <string name="pref_extended_position_refresh_interval">Position refresh interval</string>
+
+    <string-array name="pref_extended_position_refresh_interval_titles">
+        <item>1000 ms</item>
+        <item>1500 ms</item>
+        <item>2000 ms</item>
+    </string-array>
+    <string-array name="pref_extended_position_refresh_interval_values">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+    </string-array>
+
+    <string name="pref_extended_signallist_refresh_interval">Signallist refresh interval</string>
+
+    <string-array name="pref_extended_signallist_refresh_interval_titles">
+        <item>1000 ms</item>
+        <item>1500 ms</item>
+        <item>2000 ms</item>
+    </string-array>
+    <string-array name="pref_extended_signallist_refresh_interval_values">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,41 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="pref_general"
+        android:title="@string/pref_header_general" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_use_geometric_mean"
+            android:summary="@string/pref_use_geometric_mean_summary"
+            android:title="@string/pref_use_geometric_mean_title" />
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="pref_bssid_filter"
+            android:summary="@string/pref_bssid_filter_summary"
+            android:title="@string/pref_bssid_filter_title" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_extended"
+        android:title="@string/pref_header_extended" >
+        <ListPreference
+            android:defaultValue="1000"
+            android:entries="@array/pref_extended_wifi_fetching_interval_titles"
+            android:entryValues="@array/pref_extended_wifi_fetching_interval_values"
+            android:key="pref_extended_wifi_fetching_interval"
+            android:title="@string/pref_extended_wifi_fetching_interval" />
+        <ListPreference
+            android:defaultValue="1000"
+            android:entries="@array/pref_extended_position_refresh_interval_titles"
+            android:entryValues="@array/pref_extended_position_refresh_interval_values"
+            android:key="pref_position_refresh_fetching_interval"
+            android:title="@string/pref_extended_position_refresh_interval" />
+        <ListPreference
+            android:defaultValue="1000"
+            android:entries="@array/pref_extended_signallist_refresh_interval_titles"
+            android:entryValues="@array/pref_extended_signallist_refresh_interval_values"
+            android:key="pref_extended_signallist_refresh_interval"
+            android:title="@string/pref_extended_signallist_refresh_interval" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

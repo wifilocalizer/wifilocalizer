@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bright_gray_bg_color"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:minHeight="36dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="@dimen/navdrawer_standard_padding"
+        android:paddingRight="@dimen/navdrawer_standard_padding"
+        android:singleLine="true"
+        android:text="@string/section_1"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_gray_text_color" />
+
+    <ListView
+        android:id="@+id/navdrawerlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:showDividers="middle"
+        android:textColor="@color/dark_gray_text_color"
+        tools:context="de.kk.wifilocalizer.ui.fragments.NavDrawerFragment" />
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:minHeight="36dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="@dimen/navdrawer_standard_padding"
+        android:paddingRight="@dimen/navdrawer_standard_padding"
+        android:singleLine="true"
+        android:text="@string/section_2"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_gray_text_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/navdrawer_standard_padding"
+            android:paddingLeft="@dimen/navdrawer_standard_padding"
+            android:paddingRight="32dp"
+            android:paddingTop="@dimen/navdrawer_standard_padding"
+            android:text="@string/wifi_scan"
+            android:textColor="@color/dark_gray_text_color"
+            android:textSize="18sp" />
+
+        <include layout="@layout/compound_button" />
+    </LinearLayout>
+
+</LinearLayout>

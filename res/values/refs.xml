@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Alias to replace single-pane layout with two-pane layout on large screens -->
+    <item name="fragment_maps" type="layout">@layout/fragment_maps_list</item>
+
+</resources>
