@@ -130,25 +130,29 @@ public class Localizer {
                     float currentLevel = meanSigMap.get(fpSignal.getBssid()).getLevel();
                     float fpLevel = fpSignal.getLevel();
 
-                    currentLevel = Math.abs(currentLevel);
-                    fpLevel = Math.abs(fpLevel);
-
+                    // absolute difference between the compared signals
                     float tmpDist = Math.abs(currentLevel - fpLevel);
 
-                    // Use of Wifi-Level in -db as integer (-95db <-80db)
+                    // -- Use of Wifi-Level in -db as integer (-95db <-80db) --
 
-                    // Two Versions: (uncomment one of these for use)
+                    // 4 Versions: (uncomment one of these for use)
                     // 1) Weaker Signals will more badly influence the distance
                     // tmpDist = tmpDist * ((currentLevel+fpLevel) / 10);
 
                     // 2) Stronger Signals will more badly influence the distance
-                    // tmpDist = tmpDist / ((currentLevel + fpLevel) / 10);
+                    tmpDist = tmpDist / ((currentLevel + fpLevel) / 10);
 
-                    // 3) No weighting of the db-strength
-                    // comment both of the weigth-formulas
+                    // 3) euclidean distance,computation is theoreticaly more exact, but much more time-consuming so its not
+                    // used
+                    tmpDist = tmpDist * tmpDist;
+
+                    // 4) raw, no weighting of the db-strength
+                    // comment all of the weight-formulas
 
                     // compute the sum of all distances of one Fingerprint
                     distance += tmpDist;
+                    // 3b) square-root of the vector-sum
+                    distance = (float) Math.sqrt(distance);
 
                 }
             }
@@ -169,17 +173,24 @@ public class Localizer {
      * @return the new predicted Position
      */
     private static Position geometricMean(Map<Float, Position> candidates) {
-        float sum = 0, x = 0, y = 0;
+        float x = 0, y = 0, w = 1, wsum = 0;
 
         // Math: newX = oldX1*dist1 +oldX2*dist2 + . . . + old3*dist3 --> Arithmetic Mean
         for (Entry<Float, Position> c : candidates.entrySet()) {
-            sum += c.getKey();
-            x += c.getKey() * c.getValue().getX();
-            y += c.getKey() * c.getValue().getY();
+            if (c.getKey() < 1) {
+                w = 1;
+            } else {
+                w = c.getKey();
+            }
+
+            wsum += 1 / w;
+
+            x += c.getValue().getX() / w;
+            y += c.getValue().getY() / w;
         }
 
-        x = x / sum;
-        y = y / sum;
+        x = x / wsum;
+        y = y / wsum;
 
         return new Position(x, y);
     }
